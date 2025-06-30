@@ -13,12 +13,14 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Validation\ValidationException;
 use Spatie\Activitylog\Models\Activity;
+use App\Models\KepemilikanKendaraan;
+use App\Policies\KepemilikanKendaraanPolicy;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     */
+    protected $policies = [
+        KepemilikanKendaraan::class => KepemilikanKendaraanPolicy::class,
+    ];
     public function register(): void
     {
         //
