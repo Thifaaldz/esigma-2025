@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - Impact Bootstrap Template</title>
+  <title>E-SIGMA (Eletronik Samsat Digital Untuk Masyarakat)</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -56,7 +56,7 @@
             </div>
           </div>
           <div class="col-lg-5 order-1 order-lg-2">
-            <img src="{{ asset ('front/assets/img/hero-img.svg') }}" class="img-fluid" alt="">
+            <img src="{{ asset ('front/assets/img/hero.png') }}" class="img-fluid" alt="">
           </div>
         </div>
       </div>
@@ -69,7 +69,7 @@
            
               <div class="icon-box">
                 
-                <div class="icon"><i class="bi bi-easel"></i></div>
+                <div class="icon"><i class="bi bi-file-earmark-text"></i></div>
                 <h4 class="title"><a href="https://esigma.test/masyarakat/login/" class="stretched-link">Perpanjang STNK</a></h4>
               </div>
             </a>
@@ -77,21 +77,21 @@
 
             <div class="col-xl-3 col-md-6">
               <div class="icon-box">
-                <div class="icon"><i class="bi bi-gem"></i></div>
-                <h4 class="title"><a href="" class="stretched-link">Kepemilikan Kendaraan</a></h4>
+                <div class="icon"><i class="bi bi-car-front-fill"></i> </div>
+                <h4 class="title"><a href="https://esigma.test/masyarakat/login/" class="stretched-link">Kepemilikan Kendaraan</a></h4>
               </div>
             </div><!--End Icon Box -->
 
             <div class="col-xl-3 col-md-6">
               <div class="icon-box">
-                <div class="icon"><i class="bi bi-geo-alt"></i></div>
-                <h4 class="title"><a href="" class="stretched-link">Pendaftaran SIM</a></h4>
+                <div class="icon"><i class="bi bi-card-heading"></i></div>
+                <h4 class="title"><a href="https://esigma.test/pendaftaran-sim" class="stretched-link">Pendaftaran SIM</a></h4>
               </div>
             </div><!--End Icon Box -->
 
             <div class="col-xl-3 col-md-6">
               <div class="icon-box">
-                <div class="icon"><i class="bi bi-command"></i></div>
+                <div class="icon"><i class="bi bi-camera-video-fill"></i></div>
                 <h4 class="title"><a href="" class="stretched-link">E-TILANG</a></h4>
               </div>
             </div><!--End Icon Box -->
@@ -116,7 +116,7 @@
         <div class="row gy-4">
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <h3>Layanan Digital Terpadu untuk Mobil dan Sepeda Motor</h3>
-            <img src="assets/img/about.jpg" class="img-fluid rounded-4 mb-4" alt="">
+            <img src="{{ asset ('front/assets/img/about.png') }}" class="img-fluid rounded-4 mb-4" alt="">
             <p>E-SIGMA menyediakan layanan publik yang efisien, transparan dan mudah diakses. Kami berkomitmen meningkatkan kualitas pelayanan pengurusan mobil dan sepeda motor.</p>
             <p>Tim E-SIGMA terdiri dari profesional teknologi dan pelayanan publik yang berfokus pada kemudahan, keamanan, dan efisiensi sebagai solusi digital pengurusan kendaraan di Indonesia.</p>
           </div>
@@ -130,7 +130,17 @@
                 <li><i class="bi bi-check-circle-fill"></i> <span>Pendaftaran SIM online dengan upload dokumen dan pemilihan jadwal ujian yang fleksibel.</span></li>
                 <li><i class="bi bi-check-circle-fill"></i> <span>Pengecekan status e-tilang dengan memasukkan nomor polisi, rangka, dan mesin kendaraan.</span></li>
               </ul>
+              <p>
+                yayaya
+              </p>
 
+              <div class="position-relative mt-4">
+                <img src="{{ asset ('front/assets/img/about1.png') }}" class="img-fluid rounded-4" alt="">
+                <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
     </section><!-- /About Section -->

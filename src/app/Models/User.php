@@ -76,4 +76,15 @@ public function masyarakat()
 {
     return $this->hasOne(\App\Models\Masyarakat::class);
 }
+
+public function kendaraans()
+{
+    return $this->hasMany(Kendaraan::class);
+}
+
+public function tilangs()
+{
+    return $this->hasMany(Tilang::class, 'petugas_id');
+}
+
 }

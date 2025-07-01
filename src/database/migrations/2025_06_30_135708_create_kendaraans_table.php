@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('kendaraans', function (Blueprint $table) {
             $table->id();
             $table->string('nopol')->unique();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade'); 
             $table->string('no_rangka');
             $table->string('no_mesin');
             $table->enum('jenis_roda', ['2', '4']);

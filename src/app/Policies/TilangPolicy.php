@@ -3,10 +3,10 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\KepemilikanKendaraan;
+use App\Models\Tilang;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class KepemilikanKendaraanPolicy
+class TilangPolicy
 {
     use HandlesAuthorization;
 
@@ -15,15 +15,15 @@ class KepemilikanKendaraanPolicy
      */
     public function viewAny(User $user): bool
     {
-        return $user->hasRole('masyarakat'); 
+        return $user->can('view_any_tilang');
     }
 
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, KepemilikanKendaraan $kepemilikanKendaraan): bool
+    public function view(User $user, Tilang $tilang): bool
     {
-        return $user->hasRole('masyarakat'); 
+        return $user->can('view_tilang');
     }
 
     /**
@@ -31,23 +31,23 @@ class KepemilikanKendaraanPolicy
      */
     public function create(User $user): bool
     {
-        return $user->hasRole('masyarakat'); 
+        return $user->can('create_tilang');
     }
 
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, KepemilikanKendaraan $kepemilikanKendaraan): bool
+    public function update(User $user, Tilang $tilang): bool
     {
-        return $user->hasRole('masyarakat'); 
+        return $user->can('update_tilang');
     }
 
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, KepemilikanKendaraan $kepemilikanKendaraan): bool
+    public function delete(User $user, Tilang $tilang): bool
     {
-        return $user->hasRole('masyarakat'); 
+        return $user->can('delete_tilang');
     }
 
     /**
@@ -55,15 +55,15 @@ class KepemilikanKendaraanPolicy
      */
     public function deleteAny(User $user): bool
     {
-        return $user->hasRole('masyarakat'); 
+        return $user->can('delete_any_tilang');
     }
 
     /**
      * Determine whether the user can permanently delete.
      */
-    public function forceDelete(User $user, KepemilikanKendaraan $kepemilikanKendaraan): bool
+    public function forceDelete(User $user, Tilang $tilang): bool
     {
-        return $user->hasRole('masyarakat'); 
+        return $user->can('{{ ForceDelete }}');
     }
 
     /**
@@ -71,15 +71,15 @@ class KepemilikanKendaraanPolicy
      */
     public function forceDeleteAny(User $user): bool
     {
-        return $user->hasRole('masyarakat'); 
+        return $user->can('{{ ForceDeleteAny }}');
     }
 
     /**
      * Determine whether the user can restore.
      */
-    public function restore(User $user, KepemilikanKendaraan $kepemilikanKendaraan): bool
+    public function restore(User $user, Tilang $tilang): bool
     {
-        return $user->hasRole('masyarakat'); 
+        return $user->can('{{ Restore }}');
     }
 
     /**
@@ -87,15 +87,15 @@ class KepemilikanKendaraanPolicy
      */
     public function restoreAny(User $user): bool
     {
-        return $user->hasRole('masyarakat'); 
+        return $user->can('{{ RestoreAny }}');
     }
 
     /**
      * Determine whether the user can replicate.
      */
-    public function replicate(User $user, KepemilikanKendaraan $kepemilikanKendaraan): bool
+    public function replicate(User $user, Tilang $tilang): bool
     {
-        return $user->hasRole('masyarakat'); 
+        return $user->can('{{ Replicate }}');
     }
 
     /**
@@ -103,6 +103,6 @@ class KepemilikanKendaraanPolicy
      */
     public function reorder(User $user): bool
     {
-        return $user->hasRole('masyarakat'); 
+        return $user->can('{{ Reorder }}');
     }
 }

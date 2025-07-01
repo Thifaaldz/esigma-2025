@@ -30,6 +30,9 @@ class FormPendaftaranSim extends Component
 
     public function submit()
     {
+        $this->validate();
+
+        // Validasi rasio 4:3 untuk foto
 
         // Simpan file ke storage/public
         $ktpPath = $this->ktp->store('ktp', 'public');

@@ -16,5 +16,14 @@ class Kendaraan extends Model
 {
     return $this->belongsTo(Masyarakat::class);
 }
+public function user()
+{
+    return $this->belongsTo(User::class);
+}
+
+public function tilangs()
+{
+    return $this->hasMany(Tilang::class);
+}
 
 }
