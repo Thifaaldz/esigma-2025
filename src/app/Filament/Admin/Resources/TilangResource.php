@@ -28,9 +28,30 @@ class TilangResource extends Resource
                     ->required()
                     ->label('Nomor Polisi'),
 
-                Forms\Components\TextInput::make('jenis_pelanggaran')
-                    ->required()
-                    ->label('Jenis Pelanggaran'),
+                    Forms\Components\Select::make('jenis_pelanggaran')
+                    ->label('Jenis Pelanggaran')
+                    ->options([
+                        'Tidak memakai helm' => 'Tidak memakai helm',
+                        'Melanggar rambu lalu lintas' => 'Melanggar rambu lalu lintas',
+                        'Melanggar marka jalan' => 'Melanggar marka jalan',
+                        'Tidak membawa STNK' => 'Tidak membawa STNK',
+                        'Tidak membawa SIM' => 'Tidak membawa SIM',
+                        'Tidak menggunakan sabuk pengaman' => 'Tidak menggunakan sabuk pengaman',
+                        'Menggunakan HP saat berkendara' => 'Menggunakan HP saat berkendara',
+                        'Melawan arus' => 'Melawan arus',
+                        'Melebihi batas kecepatan' => 'Melebihi batas kecepatan',
+                        'Berkendara di bawah pengaruh alkohol' => 'Berkendara di bawah pengaruh alkohol',
+                        'Kendaraan tidak laik jalan' => 'Kendaraan tidak laik jalan',
+                        'Knalpot tidak standar' => 'Knalpot tidak standar',
+                        'Pelanggaran plat nomor' => 'Pelanggaran plat nomor',
+                        'Berboncengan lebih dari 2 orang' => 'Berboncengan lebih dari 2 orang',
+                        'Tidak menyalakan lampu utama' => 'Tidak menyalakan lampu utama',
+                        'Pelanggaran emisi atau uji KIR' => 'Pelanggaran emisi atau uji KIR',
+                        'Pelanggaran parkir sembarangan' => 'Pelanggaran parkir sembarangan',
+                        'Tidak membayar pajak kendaraan' => 'Tidak membayar pajak kendaraan',
+                        'Menggunakan kendaraan tidak sesuai peruntukan' => 'Menggunakan kendaraan tidak sesuai peruntukan',
+                        'Surat-surat kendaraan palsu' => 'Surat-surat kendaraan palsu',
+                    ]),
 
                 Forms\Components\Textarea::make('deskripsi')
                     ->label('Deskripsi Pelanggaran'),
@@ -115,7 +136,7 @@ class TilangResource extends Resource
 
     public static function viewAny(): bool
     {
-        return in_array(auth()->user()?->role, ['super_admin', 'polisi']);
+        return $user->hasRole('super_admin','masyarakat'); 
     }
     public static function shouldRegisterNavigation(): bool
     {

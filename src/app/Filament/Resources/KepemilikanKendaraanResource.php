@@ -19,6 +19,8 @@ class KepemilikanKendaraanResource extends Resource
     protected static ?string $navigationLabel = 'Daftar Kepemilikan';
     protected static ?string $pluralModelLabel = 'Kepemilikan Kendaraan';
 
+
+
     public static function form(Form $form): Form
     {
         return $form
@@ -74,5 +76,9 @@ class KepemilikanKendaraanResource extends Resource
             'create' => Pages\CreateKepemilikanKendaraan::route('/create'),
             'edit' => Pages\EditKepemilikanKendaraan::route('/{record}/edit'),
         ];
+    }
+    public static function viewAny(): bool
+    {
+        return $user->hasRole('masyarakat'); 
     }
 }

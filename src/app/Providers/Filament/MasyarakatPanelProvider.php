@@ -41,6 +41,7 @@ class MasyarakatPanelProvider extends PanelProvider
             ])
             ->resources([
                 \App\Filament\Resources\KepemilikanKendaraanResource::class,
+                \App\Filament\Admin\Resources\TilangResource::class,
             ])
             ->middleware([
                 EncryptCookies::class,

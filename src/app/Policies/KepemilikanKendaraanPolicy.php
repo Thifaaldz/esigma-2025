@@ -15,7 +15,7 @@ class KepemilikanKendaraanPolicy
      */
     public function viewAny(User $user): bool
     {
-        return $user->hasRole('masyarakat'); 
+        return $user->can('view_any_kepemilikan::kendaraan');
     }
 
     /**
@@ -23,7 +23,7 @@ class KepemilikanKendaraanPolicy
      */
     public function view(User $user, KepemilikanKendaraan $kepemilikanKendaraan): bool
     {
-        return $user->hasRole('masyarakat'); 
+        return $user->can('view_kepemilikan::kendaraan');
     }
 
     /**
@@ -31,7 +31,7 @@ class KepemilikanKendaraanPolicy
      */
     public function create(User $user): bool
     {
-        return $user->hasRole('masyarakat'); 
+        return $user->can('create_kepemilikan::kendaraan');
     }
 
     /**
@@ -39,7 +39,7 @@ class KepemilikanKendaraanPolicy
      */
     public function update(User $user, KepemilikanKendaraan $kepemilikanKendaraan): bool
     {
-        return $user->hasRole('masyarakat'); 
+        return $user->can('update_kepemilikan::kendaraan');
     }
 
     /**
@@ -47,7 +47,7 @@ class KepemilikanKendaraanPolicy
      */
     public function delete(User $user, KepemilikanKendaraan $kepemilikanKendaraan): bool
     {
-        return $user->hasRole('masyarakat'); 
+        return $user->can('delete_kepemilikan::kendaraan');
     }
 
     /**
@@ -55,7 +55,7 @@ class KepemilikanKendaraanPolicy
      */
     public function deleteAny(User $user): bool
     {
-        return $user->hasRole('masyarakat'); 
+        return $user->can('delete_any_kepemilikan::kendaraan');
     }
 
     /**
@@ -63,7 +63,7 @@ class KepemilikanKendaraanPolicy
      */
     public function forceDelete(User $user, KepemilikanKendaraan $kepemilikanKendaraan): bool
     {
-        return $user->hasRole('masyarakat'); 
+        return $user->can('{{ ForceDelete }}');
     }
 
     /**
@@ -71,7 +71,7 @@ class KepemilikanKendaraanPolicy
      */
     public function forceDeleteAny(User $user): bool
     {
-        return $user->hasRole('masyarakat'); 
+        return $user->can('{{ ForceDeleteAny }}');
     }
 
     /**
@@ -79,7 +79,7 @@ class KepemilikanKendaraanPolicy
      */
     public function restore(User $user, KepemilikanKendaraan $kepemilikanKendaraan): bool
     {
-        return $user->hasRole('masyarakat'); 
+        return $user->can('{{ Restore }}');
     }
 
     /**
@@ -87,7 +87,7 @@ class KepemilikanKendaraanPolicy
      */
     public function restoreAny(User $user): bool
     {
-        return $user->hasRole('masyarakat'); 
+        return $user->can('{{ RestoreAny }}');
     }
 
     /**
@@ -95,7 +95,7 @@ class KepemilikanKendaraanPolicy
      */
     public function replicate(User $user, KepemilikanKendaraan $kepemilikanKendaraan): bool
     {
-        return $user->hasRole('masyarakat'); 
+        return $user->can('{{ Replicate }}');
     }
 
     /**
@@ -103,6 +103,6 @@ class KepemilikanKendaraanPolicy
      */
     public function reorder(User $user): bool
     {
-        return $user->hasRole('masyarakat'); 
+        return $user->can('{{ Reorder }}');
     }
 }

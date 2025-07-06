@@ -5,6 +5,7 @@ use App\Livewire\HomePage;
 use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
 use App\Models\PendaftaranSim;
+use App\Models\Tilang;
 use Barryvdh\DomPDF\Facade\Pdf;
 
 /* NOTE: Do Not Remove
@@ -42,3 +43,6 @@ Route::get('/cetak-sim/{id}', function ($id) {
     $pdf = Pdf::loadView('pdf.sim', compact('data'));
     return $pdf->download('bukti_pendaftaran_SIM_'.$data->nik.'.pdf');
 })->name('cetak.sim');
+
+
+Route::get('/cek-tilang', Tilang::class);
