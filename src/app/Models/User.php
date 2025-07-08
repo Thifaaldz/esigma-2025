@@ -66,25 +66,4 @@ class User extends Authenticatable implements FilamentUser, HasAvatar
     {
         return true;
     }
-    public function user()
-{
-    return $this->belongsTo(User::class);
-}
-
-
-public function masyarakat()
-{
-    return $this->hasOne(\App\Models\Masyarakat::class);
-}
-
-public function kendaraans()
-{
-    return $this->hasMany(Kendaraan::class);
-}
-
-public function tilangs()
-{
-    return $this->hasMany(Tilang::class, 'petugas_id');
-}
-
 }

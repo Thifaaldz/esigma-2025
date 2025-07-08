@@ -13,22 +13,7 @@ class RoleSeeder extends Seeder
      */
     public function run(): void
     {
-    $guard = 'web'; // sesuaikan dengan guard yang kamu pakai di auth.php
-
-    $roles = [
-        'super_admin',
-        'admin',
-        'petugas',
-        'polisi',
-        'masyarakat',
-        'user',
-    ];
-
-    foreach ($roles as $role) {
-        Role::firstOrCreate([
-            'name' => $role,
-            'guard_name' => $guard,
-        ]);
-    }
+        Role::firstOrCreate(['name' => 'super_admin']);
+        Role::firstOrCreate(['name' => 'user']);
     }
 }
