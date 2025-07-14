@@ -15,7 +15,7 @@ class KendaraanSeeder extends Seeder
     {
         DB::table('kendaraans')->insert([
             [
-                'user_id' => 1, // ← Tambahkan ini
+                'user_id' => 3, // ← Tambahkan ini
                 'nopol' => 'B1234ABC',
                 'no_rangka' => 'RNG1234567890A1',
                 'no_mesin' => 'ENG1234567890A1',
@@ -27,7 +27,7 @@ class KendaraanSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'user_id' => 1,
+                'user_id' => 3,
                 'nopol' => 'D5678XYZ',
                 'no_rangka' => 'RNG234567890B2',
                 'no_mesin' => 'ENG234567890B2',
@@ -39,7 +39,7 @@ class KendaraanSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'user_id' => 1,
+                'user_id' => 3,
                 'nopol' => 'F8765LMN',
                 'no_rangka' => 'RNG345678901C3',
                 'no_mesin' => 'ENG345678901C3',
@@ -51,7 +51,7 @@ class KendaraanSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'user_id' => 1,
+                'user_id' => 3,
                 'nopol' => 'E4567JKL',
                 'no_rangka' => 'RNG456789012D4',
                 'no_mesin' => 'ENG456789012D4',
@@ -63,7 +63,7 @@ class KendaraanSeeder extends Seeder
                 'updated_at' => now(),
             ],
             [
-                'user_id' => 1,
+                'user_id' => 3,
                 'nopol' => 'B7890QWE',
                 'no_rangka' => 'RNG567890123E5',
                 'no_mesin' => 'ENG567890123E5',

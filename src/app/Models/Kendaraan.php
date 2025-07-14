@@ -16,14 +16,23 @@ class Kendaraan extends Model
 {
     return $this->belongsTo(Masyarakat::class);
 }
-public function user()
-{
-    return $this->belongsTo(User::class);
-}
 
 public function tilangs()
 {
     return $this->hasMany(Tilang::class);
+}
+
+
+
+public function kepemilikanKendaraan()
+{
+    return $this->hasOne(KepemilikanKendaraan::class);
+}
+
+// Relasi ke User (pemilik awal)
+public function user()
+{
+    return $this->belongsTo(User::class);
 }
 
 }

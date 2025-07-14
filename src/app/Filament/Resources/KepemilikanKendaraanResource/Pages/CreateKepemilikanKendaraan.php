@@ -12,36 +12,38 @@ class CreateKepemilikanKendaraan extends CreateRecord
     protected static string $resource = KepemilikanKendaraanResource::class;
 
     protected function mutateFormDataBeforeCreate(array $data): array
-    {
-        $kendaraan = Kendaraan::where('nopol', $data['nopol'])
-            ->where('no_rangka', $data['no_rangka'])
-            ->where('no_mesin', $data['no_mesin'])
-            ->first();
+{
+    $kendaraan = Kendaraan::find($data['kendaraan_id']);
 
-        if ($kendaraan) {
-            if ($kendaraan->masyarakat_id === null) {
-                $kendaraan->masyarakat_id = $data['masyarakat_id'];
-                $kendaraan->save();
+    if ($kendaraan) {
+        // Cek apakah kendaraan sudah dimiliki oleh masyarakat lain
+        $sudahDimiliki = \App\Models\KepemilikanKendaraan::where('kendaraan_id', $kendaraan->id)->exists();
 
-                $data['kendaraan_id'] = $kendaraan->id;
+        if (! $sudahDimiliki) {
+            // Isi data nopol, no_rangka, no_mesin dari kendaraan
+            $data['nopol'] = $kendaraan->nopol;
+            $data['no_rangka'] = $kendaraan->no_rangka;
+            $data['no_mesin'] = $kendaraan->no_mesin;
 
-                Notification::make()
-                    ->title('Kendaraan berhasil dikaitkan dengan akun Anda.')
-                    ->success()
-                    ->send();
-            } else {
-                Notification::make()
-                    ->title('Kendaraan ini sudah dimiliki masyarakat lain.')
-                    ->danger()
-                    ->send();
-            }
+            Notification::make()
+                ->title('Kendaraan berhasil dikaitkan dengan akun Anda.')
+                ->success()
+                ->send();
         } else {
             Notification::make()
-                ->title('Kendaraan tidak ditemukan. Periksa kembali data.')
+                ->title('Kendaraan ini sudah dimiliki masyarakat lain.')
                 ->danger()
                 ->send();
         }
-
-        return $data;
+    } else {
+        Notification::make()
+            ->title('Kendaraan tidak ditemukan.')
+            ->danger()
+            ->send();
     }
+
+    return $data;
+}
+
+ 
 }

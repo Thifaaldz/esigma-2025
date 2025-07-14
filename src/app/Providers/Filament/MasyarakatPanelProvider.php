@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Resources\KepemilikanKendaraanResource;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -25,7 +26,7 @@ class MasyarakatPanelProvider extends PanelProvider
         return $panel
             ->id('masyarakat')
             ->path('masyarakat')
-            ->login()   
+            ->login()
             ->colors([
                 'primary' => Color::Amber,
             ])
@@ -40,8 +41,7 @@ class MasyarakatPanelProvider extends PanelProvider
                 Widgets\FilamentInfoWidget::class,
             ])
             ->resources([
-                \App\Filament\Resources\KepemilikanKendaraanResource::class,
-                \App\Filament\Admin\Resources\TilangResource::class,
+              KepemilikanKendaraanResource::class,
             ])
             ->middleware([
                 EncryptCookies::class,
@@ -58,5 +58,4 @@ class MasyarakatPanelProvider extends PanelProvider
                 Authenticate::class,
             ]);
     }
-    
 }

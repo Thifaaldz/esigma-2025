@@ -17,13 +17,15 @@ class KepemilikanKendaraan extends Model
         'kendaraan_id',
     ];
 
-    public function masyarakat()
-    {
-        return $this->belongsTo(Masyarakat::class);
-    }
+
 
     public function kendaraan()
-{
-    return $this->belongsTo(Kendaraan::class);
-}
+    {
+        return $this->belongsTo(\App\Models\Kendaraan::class);
+    }
+    
+    public function masyarakat()
+    {
+        return $this->belongsTo(\App\Models\Masyarakat::class);
+    }
 }
